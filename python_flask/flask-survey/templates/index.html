@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>설문조사</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { background-color: #f8f9fa; padding: 2rem; }
+    .question-block { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 class="mb-4 text-center">📝 설문조사</h1>
+
+  <form id="surveyForm" method="POST">
+  <div class="form-group">
+    <label for="username">이름을 입력해주세요:</label>
+    <input type="text" class="form-control" id="username" name="user_id" required>
+  </div>
+    {% for q_id, data in survey_data.items() %}
+    <div class="question-block">
+      <h5>{{q_id}.{data.q_content}}</h5>
+        {% for opt in data.options %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q{{ q_id }}" value="{{opt.o_id}}" required>
+          <label class="form-check-label">{{ opt.o_content }}</label>
+        </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+  <button type="submit" class="btn btn-success btn-block">제출</button>
+</form>
+</div>
+</body>
+</html>

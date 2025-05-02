@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yolo image detection</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+  <h2>object detection</h2>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="file" id="file" required>
+    <input type="button" id="btn" value="detection">
+  </form>
+  <div id="result" style="display:none;">
+     <h3>result</h3>
+     <p>original</p>
+     <img src="" id="originalImg" width="300px" >
+     <p>detection image</p>
+     <img src="" id="resultImg" width="300px">
+  </div>
+  <script>
+      $(document).ready(function(){
+          $("#btn").click(function(){
+                var formData = new FormData($('#uploadForm')[0]);
+                $.ajax({
+                      url: "/analyze"
+                     ,type: "POST"
+                     ,data: formData
+                     ,processData:false
+                     ,contentType:false
+                     ,success:function(res){
+                       $("#originalImg").attr("src", res.original_image);
+                       $("#resultImg").attr("src", res.result_image);
+                       $("#result").show();
+                     },error:function(e){
+                       console.log(e);
+                     }
+                });
+          });
+      });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>명함 OCR 추출기</title>
+</head>
+<body>
+  <h2>명함 업로드</h2>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">업로드 및 분석!</button>
+  </form>
+
+    {% if image_path %}
+      <h3> 업로드 이미지 </h3>
+      <img src="{{image_path}}" style="max-width:400px;">
+    {% endif %}
+    {% if re_image_path %}
+      <h3> 보정 이미지 </h3>
+      <img src="{{re_image_path}}" style="max-width:400px;">
+    {% endif %}
+    {% if result_text %}
+      <h3> 전체 추출 텍스트 </h3>
+      <pre>{{result_text}}</pre>
+    {% endif %}
+    {% if info %}
+      <h3>연락처 정보</h3>
+      <ul>
+          {% if info.names %}
+              <li><strong>이름:</strong>{{info.names | join(',')}}</li>
+          {% endif %}
+          {% if info.phones %}
+              <li><strong>전화:</strong>{{info.phones | join(',')}}</li>
+          {% endif %}
+          {% if info.emails %}
+              <li><strong>이메일:</strong>{{info.emails | join(',')}}</li>
+          {% endif %}
+      </ul>
+{% endif %}
+</body>
+</html>

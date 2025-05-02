@@ -1,0 +1,101 @@
+song_id,title,genre,mood,tempo,vocal,instrument,year
+song1,Sample Song 1,Pop,"happy,energetic",slow,duet,"synth,strings,piano",1980s
+song2,Sample Song 2,EDM,romantic,medium,female solo,strings,1990s
+song3,Sample Song 3,Jazz,romantic,slow,male solo,"guitar,piano,orchestral",2000s
+song4,Sample Song 4,Classical,"dark,chill",fast,male solo,orchestral,2010s
+song5,Sample Song 5,Rock,dark,medium,duet,"orchestral,strings",2020s
+song6,Sample Song 6,EDM,"dark,romantic",fast,instrumental,"drums,strings",2010s
+song7,Sample Song 7,Classical,"romantic,sad",medium,instrumental,"drums,piano,strings",2000s
+song8,Sample Song 8,Hip-hop,romantic,fast,instrumental,guitar,2000s
+song9,Sample Song 9,Jazz,"romantic,happy",fast,female solo,"strings,piano",2020s
+song10,Sample Song 10,Rock,happy,medium,duet,piano,1990s
+song11,Sample Song 11,Classical,"romantic,sad",slow,male solo,"guitar,synth,orchestral",2000s
+song12,Sample Song 12,Classical,chill,fast,duet,"guitar,strings,orchestral",2010s
+song13,Sample Song 13,Hip-hop,dark,medium,male solo,"synth,strings,guitar",2010s
+song14,Sample Song 14,Ballad,"sad,chill",slow,female solo,"drums,synth",2000s
+song15,Sample Song 15,Hip-hop,"sad,energetic",medium,instrumental,"synth,orchestral,strings",1980s
+song16,Sample Song 16,Ballad,energetic,medium,female solo,"piano,synth,orchestral",1990s
+song17,Sample Song 17,Rock,energetic,slow,duet,"guitar,synth",2010s
+song18,Sample Song 18,Pop,"energetic,happy",medium,male solo,"piano,drums",2020s
+song19,Sample Song 19,Hip-hop,"energetic,chill",medium,instrumental,"guitar,orchestral",2000s
+song20,Sample Song 20,Rock,sad,medium,male solo,"strings,drums",2010s
+song21,Sample Song 21,Jazz,romantic,slow,duet,"synth,drums,strings",2010s
+song22,Sample Song 22,Jazz,chill,fast,duet,orchestral,1980s
+song23,Sample Song 23,Hip-hop,"chill,romantic",fast,duet,"piano,drums,guitar",2010s
+song24,Sample Song 24,EDM,"energetic,dark",medium,male solo,synth,1990s
+song25,Sample Song 25,Rock,"chill,energetic",slow,male solo,drums,1990s
+song26,Sample Song 26,Ballad,"energetic,chill",slow,male solo,guitar,2000s
+song27,Sample Song 27,EDM,romantic,slow,female solo,"strings,orchestral",2020s
+song28,Sample Song 28,Rock,chill,medium,duet,"orchestral,synth",2000s
+song29,Sample Song 29,Classical,"sad,dark",fast,duet,"orchestral,piano,drums",2020s
+song30,Sample Song 30,EDM,"dark,happy",fast,duet,orchestral,2020s
+song31,Sample Song 31,Ballad,chill,slow,male solo,"synth,guitar,strings",1980s
+song32,Sample Song 32,Hip-hop,"chill,energetic",slow,duet,"guitar,piano",1980s
+song33,Sample Song 33,Hip-hop,sad,medium,female solo,"synth,drums,orchestral",2020s
+song34,Sample Song 34,EDM,"sad,happy",fast,instrumental,"drums,synth",2020s
+song35,Sample Song 35,EDM,dark,slow,instrumental,"strings,drums,orchestral",2020s
+song36,Sample Song 36,Hip-hop,"sad,romantic",slow,duet,"orchestral,drums",2020s
+song37,Sample Song 37,Pop,"dark,romantic",medium,duet,piano,2000s
+song38,Sample Song 38,Ballad,"chill,dark",slow,male solo,"guitar,orchestral,synth",2000s
+song39,Sample Song 39,Hip-hop,energetic,slow,male solo,"orchestral,strings",1980s
+song40,Sample Song 40,EDM,sad,medium,male solo,"orchestral,strings",1980s
+song41,Sample Song 41,Rock,"energetic,chill",medium,duet,"drums,strings",1980s
+song42,Sample Song 42,EDM,"sad,romantic",fast,female solo,drums,2010s
+song43,Sample Song 43,Rock,"energetic,sad",medium,instrumental,"drums,strings",1980s
+song44,Sample Song 44,Jazz,energetic,medium,instrumental,orchestral,1990s
+song45,Sample Song 45,EDM,chill,slow,female solo,"guitar,orchestral,strings",1980s
+song46,Sample Song 46,Ballad,"chill,sad",medium,female solo,"piano,strings,orchestral",2020s
+song47,Sample Song 47,Ballad,chill,slow,duet,"guitar,orchestral,strings",1980s
+song48,Sample Song 48,EDM,"romantic,energetic",slow,instrumental,"orchestral,strings,drums",1980s
+song49,Sample Song 49,Pop,"dark,chill",medium,duet,"synth,drums",2020s
+song50,Sample Song 50,Ballad,"chill,energetic",fast,male solo,orchestral,2000s
+song51,Sample Song 51,Classical,"happy,chill",slow,female solo,"synth,drums",2000s
+song52,Sample Song 52,Ballad,"dark,sad",slow,male solo,orchestral,2010s
+song53,Sample Song 53,Classical,energetic,medium,duet,"guitar,orchestral,piano",2010s
+song54,Sample Song 54,Rock,"energetic,dark",medium,duet,"strings,drums",2020s
+song55,Sample Song 55,Hip-hop,"energetic,sad",slow,instrumental,"piano,guitar,strings",2000s
+song56,Sample Song 56,Hip-hop,"dark,energetic",slow,instrumental,piano,2020s
+song57,Sample Song 57,Rock,"sad,romantic",slow,male solo,synth,1990s
+song58,Sample Song 58,Jazz,chill,medium,female solo,"orchestral,strings,synth",2000s
+song59,Sample Song 59,Hip-hop,romantic,slow,instrumental,synth,2010s
+song60,Sample Song 60,Classical,happy,medium,female solo,"strings,synth,guitar",1980s
+song61,Sample Song 61,Jazz,dark,slow,male solo,"piano,synth",1980s
+song62,Sample Song 62,EDM,"dark,energetic",medium,female solo,"orchestral,synth,guitar",1980s
+song63,Sample Song 63,Rock,"romantic,chill",slow,duet,"guitar,synth",1990s
+song64,Sample Song 64,EDM,"happy,dark",fast,duet,"orchestral,strings",2010s
+song65,Sample Song 65,Jazz,romantic,fast,duet,drums,2010s
+song66,Sample Song 66,Jazz,"dark,romantic",medium,instrumental,synth,2020s
+song67,Sample Song 67,Hip-hop,happy,medium,duet,"synth,guitar",2020s
+song68,Sample Song 68,Pop,energetic,fast,instrumental,"guitar,orchestral,drums",1980s
+song69,Sample Song 69,Pop,happy,medium,male solo,"drums,synth",1980s
+song70,Sample Song 70,Rock,"energetic,happy",medium,female solo,synth,2010s
+song71,Sample Song 71,EDM,"sad,chill",medium,duet,"synth,strings",2000s
+song72,Sample Song 72,Jazz,dark,fast,female solo,"orchestral,guitar",2020s
+song73,Sample Song 73,Pop,energetic,medium,instrumental,strings,1980s
+song74,Sample Song 74,Jazz,sad,fast,male solo,"drums,synth",1990s
+song75,Sample Song 75,EDM,"dark,romantic",slow,female solo,orchestral,2010s
+song76,Sample Song 76,Rock,chill,fast,duet,piano,2000s
+song77,Sample Song 77,Pop,sad,fast,instrumental,"guitar,synth,orchestral",2010s
+song78,Sample Song 78,EDM,"chill,dark",medium,instrumental,"synth,drums",2010s
+song79,Sample Song 79,Classical,"romantic,dark",medium,male solo,"orchestral,synth,piano",2010s
+song80,Sample Song 80,Ballad,chill,slow,male solo,guitar,2010s
+song81,Sample Song 81,Classical,chill,fast,instrumental,strings,1990s
+song82,Sample Song 82,Rock,romantic,slow,female solo,"drums,strings",2010s
+song83,Sample Song 83,Rock,"sad,happy",slow,instrumental,"orchestral,piano",2000s
+song84,Sample Song 84,Rock,energetic,fast,female solo,"guitar,orchestral,drums",1980s
+song85,Sample Song 85,Rock,"sad,chill",medium,instrumental,strings,1990s
+song86,Sample Song 86,Hip-hop,chill,slow,duet,"synth,piano",1980s
+song87,Sample Song 87,Ballad,"romantic,energetic",fast,female solo,"orchestral,piano",2020s
+song88,Sample Song 88,Pop,"chill,dark",slow,instrumental,"piano,guitar",2020s
+song89,Sample Song 89,Ballad,"romantic,chill",slow,male solo,"piano,orchestral,drums",2010s
+song90,Sample Song 90,Classical,"chill,energetic",fast,male solo,"strings,drums",2000s
+song91,Sample Song 91,Pop,"dark,happy",medium,female solo,"orchestral,strings,piano",1990s
+song92,Sample Song 92,Pop,happy,slow,instrumental,"synth,strings",1990s
+song93,Sample Song 93,Jazz,chill,medium,instrumental,strings,2000s
+song94,Sample Song 94,Classical,energetic,fast,duet,"piano,guitar",1980s
+song95,Sample Song 95,Jazz,"energetic,sad",medium,male solo,"piano,guitar,synth",2010s
+song96,Sample Song 96,Ballad,"happy,dark",fast,duet,"guitar,orchestral",1980s
+song97,Sample Song 97,Jazz,romantic,fast,male solo,"orchestral,drums,synth",2010s
+song98,Sample Song 98,Pop,energetic,slow,male solo,drums,2000s
+song99,Sample Song 99,Ballad,"romantic,dark",medium,male solo,guitar,1990s
+song100,Sample Song 100,Hip-hop,dark,fast,instrumental,"strings,synth",2000s

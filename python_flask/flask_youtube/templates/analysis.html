@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>댓글 유사도 분석</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="url"] {
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #sentimentChart {
+            height: 200px;
+        }
+
+        #topComments {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #topComments ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #topComments li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes blink{
+            0%{opacity: 1;}
+            50%{opacity: 0.4;}
+            100%{opacity: 1;}
+        }
+        #analysisStatus{
+            animation: blink 1s infinite;
+        }
+
+    </style>
+</head>
+<body class="p-5">
+<div class="youtubeForm">
+    <h1>📺 유튜브 댓글 유사도 분석기</h1>
+    <form id="analyzeForm" class="mb-4">
+        <label for="video_id">🎥 Video ID 입력:</label>
+        <input type="url" id="video_id" name="video_id" class="form-control" required>
+        <button type="submit" class="btn btn-primary mt-2">분석 시작</button>
+        <p id="analysisStatus" style="display: none;">분석 중....</p>
+    </form>
+
+    <div id="result" style="display: none;">
+        <h4> 기준 댓글 (Top Like)</h4>
+        <p id="topComment" class="border p-2 bg-light"></p>
+        <h4 class="mt-4">🔍 유사한 댓글 Top 10</h4>
+        <ul id="similarComments" class="list-group"></ul>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$("#analyzeForm").submit(function(e) {
+    e.preventDefault();
+    var video_id = $("#video_id").val();
+    $.post("/analyze_sim",{video_id},function(data){
+        console.log(data);
+        $("#topComment").text(data.top_comment);
+        $("#similarComments").empty();
+        data.similar.forEach(item => {
+            $("#similarComments").append("<li class='list-group-item'>"+item.comment+"</li>");
+        });
+           $("#result").show();
+           $("#analysisStatus").hide();
+    });
+
+});
+
+</script>
+</body>
+</html>

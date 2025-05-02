@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Guardian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        input[type="file"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        .btn {
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .thumb {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .thumb img {
+            max-width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ 이미지 보호 도구 - Image Guardian</h1>
+
+        {% if protect_success %}
+            <div class="success-message">✅ 보호가 완료되었습니다!</div>
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="images">보호할 이미지 선택 (여러 개 가능):</label><br>
+            <input type="file" name="images" id="images" multiple accept="image/*" required><br><br>
+
+            <input type="submit" value="보호 적용" class="btn">
+        </form>
+
+        {% if results %}
+            <h2>✅ 보호된 이미지</h2>
+            <div class="gallery">
+                {% for item in results %}
+                    <div class="thumb">
+                        <p>원본</p>
+                        <img src="{{ item.original }}" alt="Original Image">
+                        <p>보호된</p>
+                        <img src="{{ item.protected }}" alt="Protected Image">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>추천 결과</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">🔍 {{user_id}} 님과 비슷한 사용자 추천</h2>
+  {% if similarities %}
+    <ul class="list-group">
+      {% for user, score in similarities %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span>👤 {{user}}</span>
+          <span>유사도: {{ (score * 100) | round(1) }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="alert alert-warning">비교할 다른 사용자가 없습니다.</p>
+  {% endif %}
+</div>
+</body>
+</html>

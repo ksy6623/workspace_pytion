@@ -1,0 +1,24 @@
+# ▶ Python 캐시 및 컴파일 파일
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ▶ 주피터 노트북 체크포인트
+.ipynb_checkpoints/
+
+# ▶ VS Code 설정 (선택)
+.vscode/
+
+# ▶ 정말 큰 파일만 무시
+*.mp4
+*.h5
+*.pth
+*.pb
+*.pt
+*.ckpt
+
+# ▶ 프로젝트 내부 출력 결과만 무시 (원본 데이터는 포함)
+Image Guardian/output/
+Image Guardian/web/uploads/
+FastPhotoStyle/static/results/
+FastPhotoStyle/static/uploads/

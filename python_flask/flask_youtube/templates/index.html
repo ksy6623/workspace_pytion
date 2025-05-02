@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>analysis of Youtube video</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="url"] {
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #sentimentChart {
+            height: 200px;
+        }
+
+        #topComments {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #topComments ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #topComments li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes blink{
+            0%{opacity: 1;}
+            50%{opacity: 0.4;}
+            100%{opacity: 1;}
+        }
+        #analysisStatus{
+            animation: blink 1s infinite;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>📺 유튜브 영상 분석</h1>
+    <form id="youtubeForm">
+        <label for="url">유튜브 URL을 입력하세요:</label>
+        <input type="url" id="url" name="youtube_url" required>
+        <input type="submit" value="분석 시작">
+        <p id="analysisStatus" style="display: none;">분석 중....</p>
+    </form>
+
+    <div id="results" style="display: none;">
+        댓글 분석 결과:
+        <ul>
+            <li>긍정적인 댓글 수: <span id="positiveCount"></span></li>
+            <li>부정적인 댓글 수: <span id="negativeCount"></span></li>
+        </ul>
+        <div id="topComments">
+            <h3>대표 댓글:</h3>
+            <h4>긍정적인 댓글 (5개):</h4>
+            <ul id="positiveComments"></ul>
+            <h4>부정적인 댓글 (5개):</h4>
+            <ul id="negativeComments"></ul>
+        </div>
+        <div id="wordCloud">
+            <h3>워드 클라우드</h3>
+            <img id="wordCloudImage" src="" alt="워드 클라우드 이미지">
+        </div>
+        <button>화면 캡처하기</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+             $("#youtubeForm").submit(function(event){
+                  event.preventDefault();
+                  var y_url = $("#url").val();
+                  $("#analysisStatus").show();
+                  $.ajax({
+                        url:"/analyze",
+                        method:"POST",
+                        data: {youtube_url : $("#url").val()},
+                        success:function(res){
+                            console.log(res);
+                            $("#results").show();
+                            $("#analysisStatus").hide();
+                            if(res.word_url){
+                                $("#wordCloudImage").attr('src',res.word_url);
+                            }
+                            $("#positiveCount").text(res.p_cnt);
+                            $("#negativeCount").text(res.n_cnt);
+                            res.p_comment.slice(0,5).forEach(function(comment){
+                                $("#positiveComments").append('<li>'+comment+'</li>');
+                            });
+                            res.n_comment.slice(0,5).forEach(function(comment){
+                                $("#negativeComments").append('<li>'+comment+'</li>');
+                            });
+                        },error:function(err){
+                            console.log(err);
+                            $("#analysisStatus").text("분석에 실패함..");
+                        }
+                  });
+             });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>
